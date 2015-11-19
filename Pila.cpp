@@ -44,4 +44,19 @@ void Pila<N>::print()
 	cout << endl;
 }
 
+template<typename N>
+Pila<N> Pila<N>::operator+(Pila<N> pil)
+{
+    Pila<N> tmp;
+    tmp.pilab = pilab;
+    int i = pil.pilab.size() - 1;
+
+    for(i; i>=0; i--)
+    {
+        N vtmp = pil.pilab[i];
+        tmp.pilab.push_back(vtmp);
+    }
+    return tmp;
+}
+
 template class Pila<int>;

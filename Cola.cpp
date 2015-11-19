@@ -40,4 +40,14 @@ void Cola<N>::print(){
 	cout << endl;
 }
 
+template<typename N>
+Cola<N> Cola<N>::operator+(Cola<N> col)
+{
+    Cola<N> tmp;
+    tmp.colab = colab;
+    tmp.colab.insert(tmp.colab.end(), col.colab.begin() , col.colab.end());
+    return tmp;
+
+}
+
 template class Cola<int>;
